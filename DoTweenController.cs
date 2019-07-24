@@ -70,7 +70,9 @@ public class DoTweenController : MonoBehaviour {
     }
 
     private IEnumerator MoveWithBothWays() {
+        
         Vector2 originalLocation = transform.position;
+        
         transform.DOMove(_targetLocation, _moveDuration).SetEase(_moveEase);
         yield return new WaitForSeconds(_moveDuration);
         transform.DOMove(originalLocation, _moveDuration).SetEase(_moveEase);
